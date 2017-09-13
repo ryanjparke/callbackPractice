@@ -24,6 +24,13 @@ and what you should write is the sayHi function that makes the code above work,
 
   // Code Here
 
+var first = (array, cb) => {
+  return cb(array[0])
+
+
+};    
+  
+
   
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -36,6 +43,10 @@ first(names, function(firstName){
 // 2. Write a function called last which returns the last item of the array using a callback function.
 
   //Code Here
+
+  var last = (array, cb) => {
+    return cb(array[array.length -1])
+  };
 
 
 
@@ -50,6 +61,10 @@ last(names, function(lastName){
 
   //Code Here
 
+  var multiply = (num1, num2, cb) => {
+    return cb(num1 * num2)
+  };
+
 
 
 multiply(4, 3, function(answer){
@@ -63,6 +78,12 @@ multiply(4, 3, function(answer){
 // If the name does not exist, invoke the callback with false as an argument.
 
   //Code Here 
+  var contains = (array, name ,cb) => {
+    if (array.includes(name)  === true) {
+      cb(true);
+    }  
+    else cb(false);
+  }
 
 
 
@@ -82,6 +103,13 @@ contains(names, 'Colt', function(result){
 
   //Code Here
 
+var uniq = (names, cb) => {
+  var nonDuplicate = Array.from(new Set(names));
+  return cb(nonDuplicate);
+
+
+}
+
 
 
 uniq(names, function(uniqArr){
@@ -92,6 +120,8 @@ uniq(names, function(uniqArr){
 // 6. Write a function called each that takes in an array of names. For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 
     //Code Here 
+
+    
 
 
 
@@ -105,6 +135,8 @@ each(names, function(item, indice){
 // When the correct user object is found, invoke the callback with the user object as an argument.
 
 // Code here
+
+
 
 
 
